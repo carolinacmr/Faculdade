@@ -1,0 +1,14 @@
+main :: IO()
+mdc :: Integer->Integer->Integer
+mdc a b
+    | mod a b == 0 = b
+    | mod b a == 0 = a
+    | a > b = mdc b (mod a b)
+    | a < b = mdc a (mod b a)
+
+main = do
+    putStrLn("Digite primeiro valor: ")
+    a<-readLn
+    putStrLn("Digite segundo valor: ")
+    b<-readLn
+    putStrLn("O mdc dos dois valores é: "++show(mdc a b))
