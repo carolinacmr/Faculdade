@@ -1,0 +1,15 @@
+
+main :: IO()
+
+elv :: Float -> Float -> Float
+elv x y
+    |y == 0 = 1
+    |y<0 = 1/elv x(-y)
+    |otherwise = x*elv x(y-1)
+   
+main = do
+putStrLn("Digite a base: ")
+x<-readLn
+putStrLn("Digite o expoente: ")
+y<-readLn
+putStrLn("Resultado: "++show(elv x y))
