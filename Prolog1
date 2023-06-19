@@ -1,0 +1,56 @@
+progenitor(maria, jose).
+progenitor(joao, jose).
+progenitor(joao, ana).
+progenitor(jose, julia).
+progenitor(jose, iris).
+progenitor(iris, jorge).
+
+mulher(maria).
+mulher(ana).
+mulher(julia).
+mulher(iris).
+
+homem(jose).
+homem(joao).
+homem(jorge).
+
+mae(X, Y):-progenitor(X, Y), mulher(X).
+pai(X, Y):-progenitor(X, Y), homem(X).
+
+avos:
+
+progenitor(X, Y), progenitor(Y, jorge).
+X = jose,
+Y = iris
+
+
+netos:
+
+progenitor(joao, Y), progenitor(Y, X).
+X = julia,
+Y = jose
+X = iris,
+Y = jose
+
+prog. em comum:
+
+progenitor(Y, ana), progenitor(Y, jose).
+Y = joao
+
+avo e avo
+—-------
+avo(X, Z):-pai(X, Y), progenitor(Y, Z).
+avoo(X, Z):-mae(X, Y), progenitor(Y, Z).
+
+—-----
+
+tio e tia:
+tio(X, Z):-irmao(X, Y), progenitor(Y, Z), homem(X).
+primo e prima.
+filho e filha.
+neto e neta.
+
+IRMAOS:
+
+irmao(Y, Z):-progenitor(X, Y), progenitor(X, Z), homem(Y).
+irma(Y, Z):-progenitor(X, Y), progenitor(X, Z), mulher(Y).
