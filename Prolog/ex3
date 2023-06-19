@@ -1,0 +1,52 @@
+Representação de Conhecimento – Desportos e Jogos. Escreva fatos e/ou regras em Prolog que representem o seguinte conhecimento: João, Maria, Ana, casa, cão, xadrez, damas, ténis, natação, apartamento, gato, tigre, homem, mulher, animal, mora_em, gosta_de, jogo, desporto.
+
+mora(joao, casa).
+mora(maria, casa).
+mora(ana, apartamento).
+
+animal(gato).
+animal(cao).
+animal(tigre).
+
+jogo(damas).
+jogo(xadrez).
+
+desporto(tenis).
+desporto(natacao).
+
+gosta(ana, gato).
+gosta(joao, cao).
+gosta(maria, tigre).
+gosta(maria, xadrez).
+gosta(ana, damas).
+gosta(joao, tenis).
+gosta(maria, natacao).
+
+homem(joao).
+mulher(maria).
+mulher(ana).
+
+a) Quem mora num apartamento e gosta de animais?
+
+mora(X, apartamento), gosta(X, Y), animal(Y)
+X = ana,
+Y = gato
+
+b) Será que o João e a Maria moram numa casa e gostam de desportos?
+
+mora(maria, casa), mora(joao, casa), gosta(maria, Y), gosta(joao, Z), desporto(Y), desporto(Z)
+true
+Y = natacao,
+Z = tenis
+
+c) Quem gosta de jogos e de desportos?
+
+gosta(X, Y), gosta(X, Z), desporto(Y), jogo(Z)
+X = maria,
+Y = natacao,
+Z = xadrez
+
+d) Existe alguma mulher que gosta de ténis e gosta de tigres?
+
+gosta(X, tenis), gosta(X, tigre), mulher(X)
+false
