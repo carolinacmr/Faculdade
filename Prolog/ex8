@@ -1,0 +1,7 @@
+come(formiga, folhas).
+come(jumento, grama).
+come(cobra, zebra).
+come(cobra, coelho).
+come(leao, coelho).
+
+come(X, Y):- come(Z, Y), come(X, Z).
