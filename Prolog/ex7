@@ -1,0 +1,55 @@
+a) Quem são os alunos do professor X?
+
+	aluno(Y, paradigmas), professor(X, paradigmas)
+X = carlos,
+Y = joao
+Y = maria
+
+b) Quem são as pessoas da universidade X? (alunos ou docentes)
+
+
+frequenta(X, feup), frequenta(Y, ist), funcionario(Z, feup), funcionario(A, ist)
+A = pedro,
+X = joao,
+Y = joel,
+Z = ana_paula
+A = pedro,
+X = joao,
+Y = joel,
+Z = carlos
+A = pedro,
+X = maria,
+Y = joel,
+Z = ana_paula
+A = pedro,
+X = maria,
+Y = joel,
+Z = carlos
+
+
+c) Quem é colega de quem? Se aluno: é colega se for colega de disciplina ou colega de curso ou
+colega de universidade. Se professor: se for professor da mesma universidade.
+
+
+	
+		aluno(X, paradigmas), frequenta(Y, feup), funcionario(Z, feup)
+X = Y, Y = joao,
+Z = ana_paula
+X = Y, Y = joao,
+Z = carlos
+X = joao,
+Y = maria,
+Z = ana_paula
+X = joao,
+Y = maria,
+Z = carlos
+X = maria,
+Y = joao,
+Z = ana_paula
+X = maria,
+Y = joao,
+Z = carlos
+X = Y, Y = maria,
+Z = ana_paula
+X = Y, Y = maria,
+Z = carlos
