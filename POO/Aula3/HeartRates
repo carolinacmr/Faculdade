@@ -1,0 +1,85 @@
+
+package Calculadora;
+
+
+public class HeartRates {
+    
+public String Nome;
+public String Sobrenome;
+public int Data;
+public int Mes;
+public int Ano;
+public int Idade;
+public int freqCard;
+
+
+    public String getNome() {
+        return Nome;
+    }
+
+    public String getSobrenome() {
+        return Sobrenome;
+    }
+
+    public int getData() {
+        return Data;
+    }
+
+    public int getMes() {
+        return Mes;
+    }
+
+    public int getAno() {
+        return Ano;
+    }
+        public void setAno(int Ano) {
+        this.Ano = Ano;
+    }
+    public int getIdade () {
+       int idade;
+       idade = 2023 - Ano;
+       return idade;
+    }
+
+    public int getFreqCard() {
+        int freq;
+        freq = 220 - getIdade();
+        return freq;
+    }
+
+    public void setNome(String Nome) {
+        this.Nome = Nome;
+    }
+
+    public void setSobrenome(String Sobrenome) {
+        this.Sobrenome = Sobrenome;
+    }
+
+    public void setData(int Data) {
+        this.Data = Data;
+    }
+
+    public void setMes(int Mes) {
+        this.Mes = Mes;
+    }
+
+    public void setIdade(int Idade) {
+        
+        
+         this.Idade = Idade;
+    }
+
+    public void setFreqCard(int freqCard) {
+        this.freqCard = freqCard;
+    }
+
+   
+    
+    
+    
+}
+
+// frequencia alvo 50-85%
+// frequencia cardiaca maxima por minuto = 220-idade ok
+// metodo para calcular a idade em anos ok
+
