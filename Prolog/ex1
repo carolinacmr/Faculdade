@@ -1,0 +1,45 @@
+Representação de Conhecimento – Autores de Livros. Escreva fatos e/ou regras em Prolog que representem o seguinte conhecimento: Os Maias, livro, Eça de Queiroz, português, inglês, romance, escreveu, autor, nacionalidade, tipo, ficção.
+
+livro(os_maias).
+livro(livro_do_desassossego).
+livro(sobre_a_escrita).
+livro(salem).
+
+autor(eca_de_queiroz).
+autor(fernando_pessoa).
+autor(stephen_king).
+
+nacionalidade(eca_de_queiroz, portugues).
+nacionalidade(fernando_pessoa, portugues).
+nacionalidade(stephen_king, estadunidense).
+
+tipo(os_maias, romance).
+tipo(livro_do_desassossego, romance).
+tipo(sobre_a_escrita, memorias).
+tipo(salem, ficcao).
+
+escreveu(eca_de_queiroz, os_maias).
+escreveu(fernando_pessoa, livro_do_desassossego).
+escreveu(stephen_king, sobre_a_escrita).
+escreveu( stephen_king, salem).
+
+a) Quem escreveu “Os Maias”?
+
+escreveu(X, os_maias).
+X = eca_de_queiroz
+
+b) Que autores portugueses escrevem romances?
+
+nacionalidade(X, portugues), tipo(Y, romance), escreveu(X, Y)
+X = eca_de_queiroz,
+Y = os_maias
+X = fernando_pessoa,
+Y = livro_do_desassossego
+
+c) Quais os autores de livros de ficção que escreveram livros de outro tipo também?
+	
+escreveu(X, Y), tipo(Y, ficcao), escreveu(X, Z), tipo(Z, TipoZ), TipoZ \= ficcao.
+TipoZ = memorias,
+X = stephen_king,
+Y = salem,
+Z = sobre_a_escrita
