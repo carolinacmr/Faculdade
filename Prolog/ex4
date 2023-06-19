@@ -1,0 +1,17 @@
+Representação de Conhecimento – Tweety e Silverster. Traduza as seguintes frases para Prolog:
+“Tweety é um pássaro. Goldie é um peixe. Molie é uma minhoca. Pássaros gostam de minhocas. Gatos gostam de peixes. Gatos gostam de pássaros. Amigos gostam uns dos outros. O meu gato é meu amigo. O meu gato come tudo o que gosta. O meu gato chama-se Silvester.”
+
+tweety(passaro).
+goldie(peixe).
+molie(minhoca).
+silvester(gato).
+
+gosta(passaro, minhoca).
+gosta(gato, peixe).
+gosta(gato, passaro).
+
+
+a) Use Prolog para determinar tudo o que come o Silvester?
+gosta(gato, X)
+X = peixe
+X = passaro
