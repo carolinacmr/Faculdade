@@ -1,0 +1,65 @@
+package Employee;
+
+
+import javax.swing.JOptionPane;
+
+public class Empregado {
+    private String primeiroNome;
+    private String sobrenome;
+    private double salarioMensal;
+
+    public Empregado() {
+        
+    }
+    
+    public String getPrimeiroNome() {
+        return primeiroNome;
+    }
+
+    public void setPrimeiroNome(String primeiroNome) {
+        this.primeiroNome = primeiroNome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+     public void setSalarioMensal(double salarioMensal) {
+       this.salarioMensal = salarioMensal;
+     }
+     
+    public double getSalarioMensal() {
+        
+        if (salarioMensal < 0) {
+            salarioMensal = 0;
+            }
+    return salarioMensal;
+    } 
+
+   
+
+    public double getSalarioAnual() {
+        return getSalarioMensal() * 12;
+    }
+
+    public void aplicarAumentoSalario(double percentualAumento) {
+        salarioMensal += salarioMensal * percentualAumento / 100;
+    }
+    
+    
+    
+    public void infoEmpregado(){
+        String info = "\nPrimeiro nome: " + getPrimeiroNome() + "\nSobrenome: " + getSobrenome() + "\nSalário mensal: R$" + getSalarioMensal();
+        
+        
+        JOptionPane.showMessageDialog(null, info, "Informações do empregado: ", JOptionPane.INFORMATION_MESSAGE );
+        
+
+    }
+    
+
+}
