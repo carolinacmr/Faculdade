@@ -1,0 +1,30 @@
+2) Representação de Conhecimento – Comidas e Bebidas. Escreva fatos e/ou regras em Prolog que representem o seguinte conhecimento: peru, frango, salmão, solha, cerveja, vinho verde, vinho maduro, Ana, Antonio, Barbara, Bruno, gosta, casado, combina.
+
+casados(bruno, ana).
+casados(antonio,barbara).
+
+gosta(bruno, vinho_verde).
+gosta(antonio, vinho_verde).
+gosta(ana, vinho_maduro).
+gosta(barbara, vinho_maduro).
+
+combina(vinho_verde, salmao).
+combina(vinho_verde, peru).
+combina(vinho_maduro, frango).
+combina(cerveja, peru).
+
+a) Ana e Bruno são casados e gostam de vinho verde?
+
+casados(bruno, ana), gosta(bruno, vinho_verde), gosta(ana, vinho_verde)
+false
+
+b) Que bebida combina com salmão?
+
+combina(X, salmao)
+X = vinho_verde
+
+c) Que comidas combinam com vinho verde?
+
+combina(vinho_verde, X)
+X = salmao
+X = peru
