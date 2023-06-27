@@ -1,0 +1,23 @@
+main :: IO()
+mult :: Int -> Int -> Int
+mult a b = a * b
+
+soma :: Int -> Int -> Int 
+soma a b = a + b
+
+
+main = do
+
+    putStrLn "Digite primeiro valor: "
+    a <- readLn
+
+    putStrLn "Digite segundo valor: "
+    b <- readLn
+
+    if a == b then do 
+        let d = soma a b
+        putStrLn ("A soma: " ++ show d)
+
+    else do
+        let d = mult a b 
+        putStrLn ("A multiplicação:  " ++ show d)
