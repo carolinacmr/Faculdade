@@ -1,0 +1,17 @@
+ordemCrescente :: Int -> Int -> Int -> (Int, Int, Int)
+ordemCrescente a b c | a < b && b < c = (a, b, c)
+                        | a < c && c < b = (a, c, b)
+                        | b < a && a < c = (b, a, c)
+                        | b < c && c < a = (b, c, a)
+                        | c < a && a < b = (c, a, b)
+                        | otherwise = (c, b, a)
+
+
+main :: IO()
+main = do
+    putStrLn "Entre com três valores: "
+    a <- readLn
+    b <- readLn
+    c <- readLn
+
+    putStrLn("Ordem Crescente: " ++ show(ordemCrescente a b c))
