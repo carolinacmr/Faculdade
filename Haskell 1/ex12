@@ -1,0 +1,32 @@
+main :: IO ()
+main = do
+
+putStrLn "Qual o número de identificação do aluno?"
+id<-readLn:: IO Int
+
+putStrLn "Quais as 3 notas obtidas nas verificações?"
+n1<-readLn::IO Double
+n2<-readLn::IO Double
+n3<-readLn::IO Double
+
+putStrLn "Qual a média dos exercícios?"
+me<-readLn::IO Double 
+
+let ma = (n1 + n2 * 2 + n3 * 3 + me)/7
+
+    conceito |ma >=90 = "A"
+             |ma >=75 && ma < 90 = "B"
+             |ma >=60 && ma < 75 = "C"
+             |ma >=40 && ma < 60 = "D"
+             |otherwise = "E"
+
+      
+    status | conceito `elem` ["A", "B", "C"] = "Aprovado"
+           | otherwise = "Reprovado"
+
+putStrLn $ "Número do aluno: " ++ show id
+putStrLn $ "Notas: " ++ show [n1, n2, n3]
+putStrLn $ "Média dos exercícios: " ++ show me
+putStrLn $ "Média de aproveitamento: " ++ show ma
+putStrLn $ "Conceito: " ++ conceito
+putStrLn $ "Situação: " ++ status
