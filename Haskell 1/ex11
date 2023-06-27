@@ -1,0 +1,19 @@
+main::IO()
+main = do
+
+putStrLn("Qual o valor do produto?")
+vProd<-readLn
+putStrLn("Qual o código da condição de pagamento?" ++
+         "\n1. À vista em dinheiro ou cheque, recebe 10% de desconto" ++
+         "\n2. À vista no cartão de crédito, recebe 15% de desconto" ++
+         "\n3. Em duas vezes, preço normal de etiqueta sem juros")
+cPagto<-readLn 
+
+let vPago = if cPagto == 1
+            then vProd*0.9
+            else if cPagto == 2
+            then vProd*0.85
+            else vProd
+
+
+putStrLn("Valor a ser pago: R$"++show(vPago))
