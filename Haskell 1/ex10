@@ -1,0 +1,18 @@
+main::IO()
+main = do
+
+putStrLn "Qual seu peso em kgs?"
+peso<-readLn
+
+putStrLn "Qual sua altura em metros?"
+altura<-readLn
+
+let imc = peso/(altura^2)
+
+if imc < 18.5
+then putStrLn "Abaixo do peso."
+else if imc >=18.5 && imc<25
+then putStrLn "Peso normal."
+else if imc >= 25 && imc <30
+then putStrLn "Acima do peso."
+else putStrLn "Obeso."
