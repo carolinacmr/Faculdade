@@ -1,0 +1,14 @@
+main = do
+putStrLn("Qual seu nome?")
+nome<-getLine
+putStrLn("Qual seu sexo?")
+sexo<-getLine
+putStrLn("Qual seu estado civil?")
+estadocivil<-getLine
+
+if sexo == "F" && estadocivil == "CASADA" then 
+  do 
+  putStrLn "Digite o tempo de casada (em anos):"
+  tempocasada<-getLine
+  putStrLn("Você, " ++nome ++ ", está a " ++tempocasada ++ " anos casada.")
+else putStrLn "Vc não é uma mulher ou não é casada."
